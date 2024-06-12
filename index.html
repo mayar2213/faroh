@@ -54,13 +54,14 @@
             height: 100px;
             border-radius: 50%;
             margin-bottom: 20px;
+            cursor: pointer; /* Make cursor a pointer to indicate clickability */
         }
     </style>
 </head>
-    <body>
+<body>
     <div class="info-container">
-        <img src="1.jpg" alt="Profile Picture">
-        <h2>📋 Personal Information</h2>
+        <img id="profile-picture" src="1.jpg" alt="Profile Picture">
+        <<h2>📋 Personal Information</h2>
         <div class="info">
             <span>👤 Name:</span> Farah Khaled
         </div>
@@ -80,5 +81,17 @@
             <span>🩺 Last Medical History:</span> non
         </div>
     </div>
+    <audio id="profile-audio" src="06.mp3"></audio>
+    <script>
+        // Get the image and audio elements
+        const profilePicture = document.getElementById('profile-picture');
+        const profileAudio = document.getElementById('profile-audio');
+
+        // Add click event listener to the image
+        profilePicture.addEventListener('click', () => {
+            profileAudio.currentTime = 115; // Set audio to start at 1:55 (115 seconds)
+            profileAudio.play();
+        });
+    </script>
 </body>
 </html>
